@@ -4,12 +4,17 @@ Two-factor authentication is becoming more and more of standard operating procee
 What some of you may not have realized is that two-factor authentication is now required for logging into Flip. This can cause problems with people who are not using a terminal to access the school servers as there is an additional prompt that requires a response. This is of particular inconvience to those using FTP programs. 
 
 Below are guides to help streamline logging onto Flip without the need of involving Duo.
+
+* [Windows Guide](#windows-guide)
+* [MacOS Guide](#macos-guide)
+
+
 ## Windows Guide
 For this you will need:
 
 * PuTTY Key Generator - a program to generate ssh private and public keys (download [here](http://the.earth.li/~sgtatham/putty/latest/x86/puttygen.exe))
-* Some way to log onto Flip such as PuTTY (available [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html))
-* A FTP Client such as Filezilla (available [here](https://filezilla-project.org/))
+* PuTTY (available [here](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html))
+* Filezilla (available [here](https://filezilla-project.org/))
 
 #### Steps
 1. Open up PuTTY Key Generator, click "Generate," and follow the on-screen instructions
@@ -81,6 +86,78 @@ For this you will need:
 	 
   5. Click Connect at the bottom and you should now be connected to Flip without the need of two-factor authentication!
   
-## Mac Guide
+## MacOS Guide
+For this you will need:
+
+* Access to a terminal
+* Cyberduck (available [here](https://cyberduck.io/))
+
+### Steps
+
+1. Open up your terminal application and type `ssh-keygen -t rsa`
+
+   ![Generate keys](./images/macos/macos_generate_key.png)
+
+2. You will then be asked to choose a save location for the keys. You can choose the default by pressing `enter`. Then hit `enter` two more times to skip creating a passcode
+
+   ![Choose save location](./images/macos/macos_key_location.png)
+
+3. Once the key is generated you should see something similar to the image below. Please ensure you remember where your `id_rsa` file is saved
+
+   ![Generated key](./images/macos/macos_key_generated.png)
+   
+4. Still in the terminal, type `ssh-copy-id your_username@access.engr.oregonstate.edu`. This will publish your public key to Flip
+
+   ![Publish public key to Flip](./images/macos/macos_ssh_copy_id.png)
+
+5. When prompted enter your password
+
+   ![Enter password](./images/macos/macos_ssh_copy_id_pass.png)
+
+6. You should now see the two-factor Duo authentication. Enter `1` to send a push to your Mobile Duo app
+
+   ![Send Duo push](./images/macos/macos_ssh_copy_id_duo.png)
+   
+7. Now you need to create a config file in the directory where you have your saved keys. If you used the default save location you can do this by entering `touch ~/.ssh/config`
+
+   ![Create config file](./images/macos/macos_create_config.png)
+   
+8. Once created, you can use your favorite text edit (mine is emacs) to open the file
+
+   ![Open config file](./images/macos/macos_open_config.png)
+   
+9. To this file you need to add three lines
+   
+   1. `Host flip` - where `flip` is the name of the shortcut you want to create
+   2. `HostName access.engr.oregonstate.edu` 
+   3. `User your_username`
+   
+   ![Edit config file](./images/macos/macos_edit_config.png)
+   
+10. To log into Flip using the key simply type `ssh flip` and you will connect without having to enter a password or do two-factor authentication
+
+   ![Ssh with key](./images/macos/macos_ssh_with_key.png)
+   
+11. Now it is time to configure Cyberduck for FTP
+
+    1. Open up Cyberduck and click the Open Connection button
+	
+	   ![Open connection](./images/macos/macos_cyberduck_open_connection.png)
+	   
+	2. You need to select the connection type and change it to `SFTP`
+	
+	   ![Select SFTP](./images/macos/macos_cyberduck_select_sftp.png)
+	   
+	3. Now you must enter your username
+	
+	   ![Enter username](./images/macos/macos_cyberduck_username.png)
+	
+	4. Do not enter a password and change SSH Private Key from `none` to the location of your `id_rsa` file. If you followed the default settings it should already be listed without needing to browse
+	
+	   ![Select private key](./images/macos/macos_cyberduck_key.png)
+	   
+	5. Finally click the Connect button and you will be logged into Flip without the need for a password or 2-factor authentication
+	
+	   ![Connect SFTP](./images/macos/macos_cyberduck_connect.png)
 
 ## Linux Guide
