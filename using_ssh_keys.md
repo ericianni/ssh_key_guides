@@ -1,16 +1,17 @@
 ## Motivation
-Two-factor authentication is becoming more and more of standard operating proceedure for large orginizations. Oregon State University is no different and two-factor authentication will soon be manditory. Many of you are accustomed to using Duo to authenticate when logging into your email or Canvas. 
+Two-factor authentication is becoming more and more of standard operating procedure for large organizations. Oregon State University is no different and two-factor authentication will soon be mandatory. Many of you are accustomed to using Duo to authenticate when logging into your email or Canvas. 
 
-What some of you may not have realized is that two-factor authentication is now required for logging into Flip. This can cause problems with people who are not using a terminal to access the school servers as there is an additional prompt that requires a response. This is of particular inconvience to those using FTP programs. 
+What some of you may not have realized is that two-factor authentication is now required for logging into Flip. This can cause problems with people who are not using a terminal to access the school servers as there is an additional prompt that requires a response. This is of particular inconvenience to those using FTP programs. 
 
 Below are guides to help streamline logging onto Flip without the need of involving Duo.
 
 * [Windows Guide](#windows-guide)
-* [MacOS Guide](#macos-guide)
+* [macOS Guide](#macos-guide)
 
 
 ## Windows Guide
 [Back to the top](#motivation)
+
 For this you will need:
 
 * PuTTY Key Generator - a program to generate ssh private and public keys (download [here](http://the.earth.li/~sgtatham/putty/latest/x86/puttygen.exe))
@@ -54,7 +55,7 @@ For this you will need:
 	 
   2. Below in the Saved Sessions field enter `flip` and click Save
   
-     ![Save session anme](./images/windows/win_save_session.png)
+     ![Save session name](./images/windows/win_save_session.png)
 	 
   3. Click Connect->SSH->Auth on the sidebar
   
@@ -69,7 +70,7 @@ For this you will need:
      ![SSH Key success](./images/windows/win_putty_key_auth.png)
  
 11. Now we need to set up FileZilla
-  1. Open Filzilla and go to File->Site Manager
+  1. Open Filezilla and go to File->Site Manager
      
 	 ![Open Site Manager](./images/windows/win_filezilla_site_manager.png)
 	 
@@ -87,8 +88,9 @@ For this you will need:
 	 
   5. Click Connect at the bottom and you should now be connected to Flip without the need of two-factor authentication!
   
-## MacOS Guide
+## macOS Guide
 [Back to the top](#motivation)
+
 For this you will need:
 
 * Access to a terminal
@@ -164,3 +166,5 @@ For this you will need:
 
 ## Linux Guide
 [Back to the top](#motivation)
+
+Given the large amounts of different Linux distributions there is no one guide that will work for all. You can use Steps 1-10 of the [macOS Guide](#macOS-guide) to generate your keys and publish them to Flip. From that point on you will need to use your FTP client of your choice. 
