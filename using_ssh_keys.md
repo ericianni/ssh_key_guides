@@ -10,6 +10,7 @@ Below are guides to help streamline logging onto Flip without the need of involv
 
 
 ## Windows Guide
+[Back to the top](#motivation)
 For this you will need:
 
 * PuTTY Key Generator - a program to generate ssh private and public keys (download [here](http://the.earth.li/~sgtatham/putty/latest/x86/puttygen.exe))
@@ -87,6 +88,7 @@ For this you will need:
   5. Click Connect at the bottom and you should now be connected to Flip without the need of two-factor authentication!
   
 ## MacOS Guide
+[Back to the top](#motivation)
 For this you will need:
 
 * Access to a terminal
@@ -161,3 +163,4 @@ For this you will need:
 	   ![Connect SFTP](./images/macos/macos_cyberduck_connect.png)
 
 ## Linux Guide
+[Back to the top](#motivation)
