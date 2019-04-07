@@ -23,7 +23,7 @@ For this you will need:
 1. Open up PuTTY Key Generator, click "Generate," and follow the on-screen instructions
 2. Once the key is generated, you will need to save the public key
 
-   ![Save public key](./images/windows/win_save_public_key.png)
+   ![Save public key](./images/windows/win_save_public_key.png =50x)
 
    Save it to a location you will be able to easily find it and name it `id_rsa.pub`
    
