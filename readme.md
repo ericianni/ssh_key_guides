@@ -8,6 +8,7 @@ Below are guides to help streamline logging onto Flip without the need of involv
 * [Windows Guide](#windows-guide)
 * [macOS Guide](#macos-guide)
 * [Linux Guide](#linux-guide)
+* [Acknowledgements](#acknowledgements)
 
 
 ## Windows Guide
@@ -169,3 +170,8 @@ For this you will need:
 [Back to the top](#motivation)
 
 Given the large amounts of different Linux distributions there is no one guide that will work for all. You can use Steps 1-10 of the [macOS Guide](#macOS-guide) to generate your keys and publish them to Flip. From that point on you will need to use your FTP client of your choice. 
+
+## Acknowledgements
+[Back to the top](#motivation)
+
+I wanted to make sure I acknowledged the very talented and motivated members of OSU's unofficial Slack group ([osu-cs.slack.com/](https://osu-cs.slack.com/)). They were the motivation to create these guides and much of the content was covered users' discussions, but it is my hope this will provide a more permanent source of information.
